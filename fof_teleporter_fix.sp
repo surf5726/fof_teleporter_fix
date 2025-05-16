@@ -16,6 +16,11 @@ public void OnClientPutInServer(int client)
 	SDKHook(client, SDKHook_Touch, OnTouch)
 }
 
+public void OnClientDisconnect(int client)
+{
+	SDKUnhook(client, SDKHook_Touch, OnTouch)
+}
+
 public void OnTouch(int client, int other)
 {
 	if (!IsClientInGame(client) || IsFakeClient(client) || !IsPlayerAlive(client))
