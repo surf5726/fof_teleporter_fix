@@ -23,7 +23,7 @@ public void OnClientDisconnect(int client)
 
 public void OnTouch(int client, int other)
 {
-	if (!IsClientInGame(client) || IsFakeClient(client) || !IsPlayerAlive(client))
+	if (!IsClientInGame(client) || !IsPlayerAlive(client))
 		return;
 	char class[32];
 	GetEdictClassname(other, class, sizeof(class));
