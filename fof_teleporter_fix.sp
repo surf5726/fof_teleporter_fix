@@ -27,7 +27,7 @@ public void OnTouch(int client, int other)
 		return;
 	char class[32];
 	GetEdictClassname(other, class, sizeof(class));
-	if(StrEqual(class, "trigger_teleport"))
+	if (StrEqual(class, "trigger_teleport"))
 	{
 		char target[32];
 		GetEntPropString(other, Prop_Data, "m_target", target, sizeof(target));
