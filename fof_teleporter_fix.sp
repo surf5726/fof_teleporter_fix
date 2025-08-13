@@ -39,11 +39,8 @@ public void OnTouch(int client, int other)
 			if (StrEqual(dest, target))
 			{
 				float pos[3];
-				float ang[3];
 				GetEntPropVector(ent, Prop_Send, "m_vecOrigin", pos);
-				GetEntPropVector(ent, Prop_Data, "m_angRotation", ang);
 				SetEntPropVector(client, Prop_Send, "m_vecOrigin", pos);
-				SetEntPropVector(client, Prop_Data, "m_angRotation", ang);
 				break;
 			}
 		}
