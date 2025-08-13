@@ -25,13 +25,13 @@ public void OnTouch(int client, int other)
 {
 	if (!IsClientInGame(client) || !IsPlayerAlive(client))
 		return;
-	char class[32];
-	GetEdictClassname(other, class, sizeof(class));
-	if (StrEqual(class, "trigger_teleport"))
+	char name[32];
+	GetEdictClassname(other, name, sizeof(name));
+	if (StrEqual(name, "trigger_teleport"))
 	{
 		char target[32];
 		GetEntPropString(other, Prop_Data, "m_target", target, sizeof(target));
-		int ent = INVALID_ENT_REFERENCE;
+		int ent;
 		while ((ent = FindEntityByClassname(ent, "info_teleport_destination")) != INVALID_ENT_REFERENCE)
 		{
 			char dest[32];
